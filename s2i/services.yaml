@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: catalog
+  labels:
+    app: dt-orders
+    service: catalog
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+      name: catalog
+  selector:
+    app: dt-orders
+    service: catalog
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  labels:
+    app: dt-orders
+    service: frontend
+spec:
+  ports:
+    - port: 80
+      targetPort: 8080
+      name: frontend
+  selector:
+    app: dt-orders
+    service: frontend
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: customer
+  labels:
+    app: dt-orders
+    service: customer
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+      name: customer
+  selector:
+    app: dt-orders
+    service: customer
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: order
+  labels:
+    app: dt-orders
+    service: order
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+      name: order
+  selector:
+    app: dt-orders
+    service: order
+  type: ClusterIP

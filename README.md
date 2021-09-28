@@ -15,9 +15,10 @@ There are two topologies of the application
 
 # How to run the application
 
-Below are two options to deploy the application:
+Below are three options to deploy the application:
 * Using docker-compose. See the docker-compose sub-folder [README](docker-compose/README.md)
 * Using kubernetes. See the K8 sub-folder [README](k8/README.md)
+* Using OpenShift's Source-to-Image (S2I). See the s2i sub-folder [README](s2i/README.md)
 
 # Traffic generators
 
